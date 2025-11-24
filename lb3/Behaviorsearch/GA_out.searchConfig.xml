@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<!DOCTYPE search SYSTEM "behaviorsearch.dtd">
+<search>
+    <bsearchVersionNumber>1,10</bsearchVersionNumber>
+    <modelInfo>
+        <modelFile>C:\Users\sered\Desktop\Urban Suite - Pollution updated.nlogox</modelFile>
+        <modelSetupCommands>setup</modelSetupCommands>
+        <modelStepCommands>go</modelStepCommands>
+        <modelStopCondition>count people = 0</modelStopCondition>
+        <modelStepLimit>100</modelStepLimit>
+        <modelMetricReporter>count people</modelMetricReporter>
+        <modelMeasureIf>true</modelMeasureIf>
+    </modelInfo>
+    <fitnessInfo>
+        <fitnessMinimized>false</fitnessMinimized>
+        <fitnessCollecting>AT_FINAL_STEP</fitnessCollecting>
+        <fitnessSamplingReplications>10</fitnessSamplingReplications>
+        <fitnessCombineReplications>MEAN</fitnessCombineReplications>
+    </fitnessInfo>
+    <searchSpace>
+        <paramSpec>["power-plants" [0 1 20]]</paramSpec>
+        <paramSpec>["birth-rate" [0 0.01 0.1]]</paramSpec>
+        <paramSpec>["polluting-rate" [5 5 5]]</paramSpec>
+        <paramSpec>["planting-rate" [0 0.01 0.1]]</paramSpec>
+        <paramSpec>["initial-population" [0 10 100]]</paramSpec>
+    </searchSpace>
+    <searchMethod type="StandardGA">
+        <searchMethodParameter name="mutation-rate" value="0.01"/>
+        <searchMethodParameter name="population-size" value="50"/>
+        <searchMethodParameter name="tournament-size" value="3"/>
+        <searchMethodParameter name="population-model" value="generational"/>
+        <searchMethodParameter name="crossover-rate" value="0.7"/>
+    </searchMethod>
+    <chromosomeRepresentation type="GrayBinaryChromosome"/>
+    <caching>true</caching>
+    <evaluationLimit>200</evaluationLimit>
+    <bestCheckingNumReplications>10</bestCheckingNumReplications>
+</search>
